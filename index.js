@@ -1,5 +1,14 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
+
 require('./services/passport')
+
+mongoose.connect(keys.mongoURI).then(() => {
+	console.log(`*** Database Connected ***`)
+}, err => {
+	console.log('Unable connect to database: ', err);
+})
 
 const app = express()
 

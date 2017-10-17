@@ -10,3 +10,4 @@ Stack of technologies and libs included:
 - Stripe payment gateway
 - Passport.js
 - MongoDB
+- Mongoose
