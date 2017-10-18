@@ -11,3 +11,4 @@ Stack of technologies and libs included:
 - Passport.js
 - MongoDB
 - Mongoose
+- mLab
