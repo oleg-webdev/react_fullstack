@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cookieSession = require('cookie-session')
+const passport = require('passport')
 const keys = require('./config/keys')
 
 // Models
@@ -14,6 +16,16 @@ mongoose.connect(keys.mongoURI).then(() => {
 })
 
 const app = express()
+
+app.use(
+	cookieSession({
+		maxAge: 300 * 24 * 60 * 60 * 1000, // month
+		keys: [ keys.cookieKey ]
+	})
+)
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Pages
 require('./routes/pagesRoutes')(app)
