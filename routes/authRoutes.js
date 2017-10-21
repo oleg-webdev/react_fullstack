@@ -41,7 +41,7 @@ module.exports = app => {
 				console.log(user)
 			})
 		}
-		
+
 
 		//@TODO return response
 	})
