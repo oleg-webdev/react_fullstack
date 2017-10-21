@@ -18,17 +18,17 @@ passport.deserializeUser(function(id, done) {
 passport.use(new LocalStrategy(
 	function(username, password, done) {
 		getUserByEmail(username, (err, user) => {
-		  if(err) throw err
-			if(!user) {
-		  	return done(null, false, {message: 'Unknown user'})
+			if (err) throw err
+			if (!user) {
+				return done(null, false, { message: 'Unknown user' })
 			}
 
 			comparePassword(password, user.password, (err, isMatch) => {
-			  if(err)throw err
-				if(isMatch) {
-			  	return done(null, user)
+				if (err) throw err
+				if (isMatch) {
+					return done(null, user)
 				} else {
-					return done(null, false, {message: 'Invalid password'})
+					return done(null, false, { message: 'Invalid password' })
 				}
 			})
 		})
@@ -41,7 +41,8 @@ passport.use(
 	new GoogleStrategy({
 			clientID: keys.googleClientID,
 			clientSecret: keys.googleClientSecret,
-			callbackURL: '/auth/google/callback'
+			callbackURL: '/auth/google/callback',
+			proxy: true
 		},
 		(accessToken, refreshToken, profile, done) => {
 
@@ -52,7 +53,7 @@ passport.use(
 				} else {
 					new User({
 						googleId: profile.id,
-						email: profile.emails[0].value
+						email: profile.emails[ 0 ].value
 					})
 						.save()
 						.then(user => done(null, user))
