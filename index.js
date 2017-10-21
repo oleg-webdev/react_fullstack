@@ -1,6 +1,9 @@
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
-const cookieSession = require('cookie-session')
+// const cookieSession = require('cookie-session')
+const session = require('express-session')
+const expressValidator = require('express-validator')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const passport = require('passport')
@@ -17,14 +20,17 @@ mongoose.connect(keys.mongoURI).then(() => {
 
 const app = express()
 
-// app.set('view engine', 'hbs')
-// app.engine('html', require('hbs').__express)
-// app.set('views',  `./views`)
+
+app.set('views', path.join(__dirname, 'views'))
+app.engine('html', require('hbs').__express)
+app.set('view engine', 'hbs')
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
+app.use(express.static(path.join(__dirname, 'public')))
 
+// cookie-session
 // app.use(
 // 	cookieSession({
 // 		name: 'authSession',
@@ -32,13 +38,32 @@ app.use(cookieParser())
 // 		keys: [ keys.cookieKey ]
 // 	})
 // )
-app.use(
-	cookieSession({
-		name: 'authSession',
-		maxAge: 300 * 24 * 60 * 60 * 1000, // month
-		keys: [ keys.cookieKey ]
-	})
-)
+
+// express-session
+app.use(session({
+	secret: keys.cookieKey,
+	saveUninitialized: true,
+	resave: false,
+	// cookie: { secure: true }
+}))
+
+app.use(expressValidator({
+	errorFormatter: (param, msg, value) => {
+		let namespace = param.split('.'),
+			root = namespace.shift(),
+			formParam = root
+
+		while (namespace.length) {
+			formParam += `[${namespace.shift()}]`
+		}
+
+		return {
+			param: formParam,
+			msg: msg,
+			value: value
+		}
+	}
+}))
 
 app.use(passport.initialize())
 app.use(passport.session())

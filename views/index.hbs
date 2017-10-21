@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+<h1>register</h1>
+<form action="/auth/register" method="post">
+  <input type="email" name="email" id="email-register">
+  <input type="password" name="password" id="password-register">
+  <button type="submit">Submit</button>
+</form>
+<hr>
+<h1>login</h1>
+<form action="/auth/login" method="post">
+  <input type="email" name="username" id="email-login">
+  <input type="password" name="password" id="password-login">
+  <button type="submit">Submit</button>
+</form>
+<pre>
+  {{user}}
+</pre>
+<a target="_blank" href="/auth/google">/auth/google</a>
+<br>
+<a target="_blank" href="/api/current_user">/api/current_user</a>
+<br>
+<a target="_blank" href="/api/debug_cookie">/api/debug_cookie</a>
+<br>
+<a href="/api/logout">/api/logout</a>
+</body>
+</html>

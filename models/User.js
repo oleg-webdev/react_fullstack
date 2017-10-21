@@ -23,7 +23,7 @@ const userSchema = new Schema({
 
 const User = mongoose.model('users', userSchema)
 
-module.exports = User
+module.exports.User = User
 
 module.exports.createUser = (newUser, callback) => {
 	bcrypt.genSalt(10, (err, salt) => {
@@ -32,10 +32,6 @@ module.exports.createUser = (newUser, callback) => {
 			newUser.save(callback)
 		})
 	})
-}
-
-module.exports.getUserById = (id, callback) => {
-  User.findById(id, callback)
 }
 
 module.exports.getUserByEmail = (email, callback) => {

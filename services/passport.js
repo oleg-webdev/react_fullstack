@@ -1,18 +1,18 @@
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 const LocalStrategy = require('passport-local').Strategy
-const { User, getUserByEmail, getUserById, comparePassword } = require('../models/User')
+const { User, getUserByEmail, comparePassword } = require('../models/User')
 const keys = require('../config/keys')
 
 passport.serializeUser((user, done) => {
 	done(null, user.id)
 })
 
-passport.deserializeUser((id, done) => {
-	getUserById(id, (err, user) => {
-	  done(err, user)
-	})
-})
+passport.deserializeUser(function(id, done) {
+	User.findById(id, function(err, user) {
+		done(err, user);
+	});
+});
 
 // Local
 passport.use(new LocalStrategy(
@@ -50,7 +50,10 @@ passport.use(
 				if (existingUser) {
 					done(null, existingUser)
 				} else {
-					new User({ googleId: profile.id })
+					new User({
+						googleId: profile.id,
+						email: profile.emails[0].value
+					})
 						.save()
 						.then(user => done(null, user))
 				}
