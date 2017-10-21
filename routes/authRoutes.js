@@ -1,4 +1,7 @@
 const passport = require('passport')
+const mongoose = require('mongoose')
+const User = mongoose.model('users')
+const {createUser} = require('../models/User')
 
 module.exports = app => {
 	// Google auth routes
@@ -13,16 +16,39 @@ module.exports = app => {
 
 	app.get('/auth/google/callback', passport.authenticate('google'))
 
-
-	
+	// Logout
 	app.get('/api/logout', (req, res) => {
 		req.logout()
 		res.send(req.user)
 	})
 
-	// debug user
-	app.get('/api/current_user', (req, res) => {
-		res.send(req.user)
+	// Register
+	app.post('/api/register', (req, res) => {
+		let email = req.body.email,
+			password = req.body.password
+
+		//@TODO Validate inputs and check if user exists
+
+		const newUser = new User({email, password})
+		createUser(newUser, (err, user) => {
+		  if(err) throw err
+
+			console.log(user)
+		})
+
+		//@TODO return response
 	})
+
+	// Login
+	app.post('/api/login',
+		passport.authenticate('local', {
+			successRedirect: '/?msg=success',
+			failureRedirect: '/?msg=fail',
+		}),
+		function(req, res) {
+
+			res.redirect('/');
+		});
+
 
 }

@@ -10,10 +10,17 @@
   "author": "cibulnicoleg@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
+    "express-validator": "^4.2.1",
+    "hbs": "^4.0.1",
     "mongoose": "^4.12.3",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
