@@ -2,6 +2,7 @@
 
 [My](https://www.upwork.com/fl/olegtsibulnik) starter template for node.js development
 Stack of technologies and libs included:
+- axios
 - node.js
 - Express
 - Express session
