@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
-// const cookieSession = require('cookie-session')
+const cookieSession = require('cookie-session')
 const session = require('express-session')
 const expressValidator = require('express-validator')
 const bodyParser = require('body-parser')
@@ -31,21 +31,21 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // cookie-session
-// app.use(
-// 	cookieSession({
-// 		name: 'authSession',
-// 		maxAge: 300 * 24 * 60 * 60 * 1000, // month
-// 		keys: [ keys.cookieKey ]
-// 	})
-// )
+app.use(
+	cookieSession({
+		name: 'authSession',
+		maxAge: 300 * 24 * 60 * 60 * 1000, // month
+		keys: [ keys.cookieKey ]
+	})
+)
 
 // express-session
-app.use(session({
-	secret: keys.cookieKey,
-	saveUninitialized: true,
-	resave: false,
-	// cookie: { secure: true }
-}))
+// app.use(session({
+// 	secret: keys.cookieKey,
+// 	saveUninitialized: true,
+// 	resave: false,
+// 	// cookie: { secure: true }
+// }))
 
 app.use(expressValidator({
 	errorFormatter: (param, msg, value) => {

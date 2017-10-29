@@ -16,6 +16,18 @@ class App extends Component {
 		this.props.fetchUser()
 	}
 
+	authInfoUser() {
+		const auth = this.props.auth
+		switch (auth) {
+			case null:
+				return
+			case false:
+				return `not logged`
+			default:
+				return `logged`
+		}
+	}
+
 	render() {
 		return (
 			<div>
@@ -34,4 +46,8 @@ class App extends Component {
 
 }
 
-export default connect(null, actions)(App)
+function mapStateToProps(state) {
+	return { auth: state.auth }
+}
+// mapDispatchToProps = actions
+export default connect( mapStateToProps, actions)(App)
