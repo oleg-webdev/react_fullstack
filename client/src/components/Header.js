@@ -23,7 +23,6 @@ class Header extends Component {
 						<a href="/" className="brand-logo">Logo</a>
 
 						<ul id="nav-mobile" className="right hide-on-med-and-down">
-							<li><a href="/">Login</a></li>
 							{this.renderContent()}
 						</ul>
 
