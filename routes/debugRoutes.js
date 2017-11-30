@@ -9,10 +9,16 @@ module.exports = app => {
 
 	// debug cookie
 	app.get('/api/debug_cookie', (req, res) => {
-		// req.session.cart = {changed: 'yes!'}
+		req.session.cart = {changed: 'yes!'}
 
 
 		res.send('/...')
+	})
+	app.get('/api/debug-response', (req, res) => {
+		// req.session.cart = {changed: 'yes!'}
+
+
+		res.send(req.session.cart)
 	})
 
 

@@ -1,19 +1,23 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-import * as actions from '../actions'
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-import Header from './Header'
-import Footer from './Footer'
+// Partials
+import Header from './Header';
+import Footer from './Footer';
 
-const Dashboard = () => <h2>Dashboard</h2>
+// Pages
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+
+const Survey = () => <h2>Survey</h2>
 const SurveyNew = () => <h2>SurveyNew</h2>
-const Landing = () => <h2>Landing</h2>
 
 class App extends Component {
 
 	componentDidMount() {
-		this.props.fetchUser()
+		this.props.fetchUser();
 	}
 
 	authInfoUser() {
@@ -31,15 +35,16 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Header/>
 				<BrowserRouter>
 					<div>
-						<Route exact path="/" component={Landing}></Route>
-						<Route exact path="/surveys" component={Dashboard}></Route>
-						<Route path="/surveys/new" component={SurveyNew}></Route>
+            <Header/>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/dashboard" component={Dashboard} />
+						<Route exact path="/surveys/" component={Survey} />
+						<Route path="/surveys/new" component={SurveyNew} />
+            <Footer/>
 					</div>
 				</BrowserRouter>
-				<Footer/>
 			</div>
 		)
 	}

@@ -1,16 +1,16 @@
-const path = require('path')
-const express = require('express')
-const mongoose = require('mongoose')
-const cookieSession = require('cookie-session')
-const session = require('express-session')
-const expressValidator = require('express-validator')
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
-const passport = require('passport')
-const keys = require('./config/keys')
+const path = require('path');
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const session = require('express-session');
+const expressValidator = require('express-validator');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const keys = require('./config/keys');
 
 // Services
-require('./services/passport')
+require('./services/passport');
 
 mongoose.connect(keys.mongoURI).then(() => {
 	console.log(`*** Database Connected ***`)

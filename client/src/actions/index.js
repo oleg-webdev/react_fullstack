@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { FETCH_USER } from './types'
+import axios from 'axios';
+import { FETCH_USER } from './types';
 
 
 export const fetchUser = () => async dispatch => {
@@ -10,4 +10,4 @@ export const fetchUser = () => async dispatch => {
 		payload: res.data
 	})
 
-}
+};
