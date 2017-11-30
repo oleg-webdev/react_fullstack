@@ -1,0 +1,12 @@
+$root: '../fonts/';
+$font-family-base: 'Montserrat', Arial, sans-serif;
+
+$PFDinTextPro-Medium: 'PFDinTextPro-Medium';
+@font-face {
+  font-family: $PFDinTextPro-Medium;
+  src: url('#{$root}PFDinTextPro-Medium/pfdintextpro-medium-webfont.woff2') format('woff2'),
+  url('#{$root}PFDinTextPro-Medium/pfdintextpro-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}

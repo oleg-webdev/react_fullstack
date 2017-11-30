@@ -1,3 +1,73 @@
+@font-face {
+  font-family: "PFDinTextPro-Medium";
+  src: url("../fonts/PFDinTextPro-Medium/pfdintextpro-medium-webfont.woff2") format("woff2"), url("../fonts/PFDinTextPro-Medium/pfdintextpro-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  overflow-x: hidden; }
+
+#app-header .navbar-nav .nav-link {
+  color: #6B8CAE;
+  font-size: 16px;
+  line-height: 23px; }
+  #app-header .navbar-nav .nav-link.active {
+    color: #343a40; }
+
+.button-gradient {
+  text-align: center;
+  color: #fff;
+  padding: 2px;
+  display: inline-block;
+  /* Rectangle 2: */
+  border-radius: 100px;
+  background: #102297;
+  background: -moz-linear-gradient(left, #102297 0%, #187bdf 52%, #00ecf8 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #102297), color-stop(52%, #187bdf), color-stop(100%, #00ecf8));
+  background: -webkit-linear-gradient(left, #102297 0%, #187bdf 52%, #00ecf8 100%);
+  background: -o-linear-gradient(left, #102297 0%, #187bdf 52%, #00ecf8 100%);
+  background: -ms-linear-gradient(left, #102297 0%, #187bdf 52%, #00ecf8 100%);
+  background: linear-gradient(to right, #102297 0%, #187bdf 52%, #00ecf8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#102297', endColorstr='#00ecf8', GradientType=1); }
+  .button-gradient span {
+    border-radius: 100px;
+    padding: 10px 30px;
+    display: inline-block; }
+  .button-gradient:hover {
+    text-decoration: none; }
+    .button-gradient:hover span {
+      background-color: #fff; }
+
+.Home-scope {
+  position: relative;
+  padding-top: 65px; }
+
+.white-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5; }
+
+.cloudy-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4; }
+
+.slogan-column {
+  align-items: center;
+  display: flex; }
+
+.home-banner {
+  position: relative;
+  z-index: 7; }
+  .home-banner h2 {
+    font-size: 48px;
+    line-height: 68px;
+    color: #6B8CAE; }
+    .home-banner h2 strong {
+      font-weight: 600; }
+
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -98,7 +168,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Montserrat", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3636,7 +3706,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Montserrat", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3717,7 +3787,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Montserrat", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5864,8 +5934,3 @@ a.text-dark:focus, a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important; }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif; }

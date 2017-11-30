@@ -1,0 +1,35 @@
+@mixin ui-button {
+  text-align: center;
+  color: #fff;
+  padding: 2px;
+  display: inline-block;
+  /* Rectangle 2: */
+
+  border-radius: 100px;
+  span {
+    border-radius: 100px;
+    padding: 10px 30px;
+    display: inline-block;
+    //display: block;
+  }
+
+  &:hover {
+    text-decoration: none;
+    span {
+      background-color: #fff;
+    }
+  }
+}
+
+.button-gradient {
+  @include ui-button;
+
+  background: rgba(16, 34, 151, 1);
+  background: -moz-linear-gradient(left, rgba(16, 34, 151, 1) 0%, rgba(24, 123, 223, 1) 52%, rgba(0, 236, 248, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(16, 34, 151, 1)), color-stop(52%, rgba(24, 123, 223, 1)), color-stop(100%, rgba(0, 236, 248, 1)));
+  background: -webkit-linear-gradient(left, rgba(16, 34, 151, 1) 0%, rgba(24, 123, 223, 1) 52%, rgba(0, 236, 248, 1) 100%);
+  background: -o-linear-gradient(left, rgba(16, 34, 151, 1) 0%, rgba(24, 123, 223, 1) 52%, rgba(0, 236, 248, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(16, 34, 151, 1) 0%, rgba(24, 123, 223, 1) 52%, rgba(0, 236, 248, 1) 100%);
+  background: linear-gradient(to right, rgba(16, 34, 151, 1) 0%, rgba(24, 123, 223, 1) 52%, rgba(0, 236, 248, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#102297', endColorstr='#00ecf8', GradientType=1);
+}

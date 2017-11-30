@@ -1,0 +1,14 @@
+
+#app-header {
+  .navbar-nav {
+    .nav-link {
+      color: $cloudy;
+      font-size: 16px;
+      line-height: 23px;
+
+      &.active {
+        color: $gray-800;
+      }
+    }
+  }
+}

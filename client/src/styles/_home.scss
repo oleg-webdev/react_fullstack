@@ -1,0 +1,37 @@
+.Home-scope {
+  position: relative;
+  padding-top: 65px;
+}
+
+.white-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.cloudy-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.slogan-column {
+  align-items: center;
+  display: flex;
+}
+
+.home-banner {
+  position: relative;
+  z-index: 7;
+
+  h2 {
+    font-size: 48px;
+    line-height: 68px;
+    color: $cloudy;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}
