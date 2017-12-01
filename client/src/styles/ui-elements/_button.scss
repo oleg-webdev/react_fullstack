@@ -3,6 +3,8 @@
   color: #fff;
   padding: 2px;
   display: inline-block;
+  cursor: pointer;
+  border: none;
   /* Rectangle 2: */
 
   border-radius: 100px;
@@ -15,6 +17,7 @@
 
   &:hover {
     text-decoration: none;
+    color: $active;
     span {
       background-color: #fff;
     }

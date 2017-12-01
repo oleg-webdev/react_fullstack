@@ -59,7 +59,7 @@ class Header extends Component {
       <header id={'app-header'} className={this.state.scrolled}>
         <nav className="navbar navbar-expand-lg fixed-top">
           <div className="container align-items-lg-start">
-            <Link className="navbar-brand" to={this.mainLink()}>
+            <Link className="navbar-brand" to={'/'}>
               <img src={BWSBrandMonochrome} alt="bws-brand"/>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse"

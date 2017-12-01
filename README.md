@@ -5,6 +5,7 @@ Stack of technologies and libs included:
 - axios
 - node.js
 - Express
+- nodemailer
 - Express session
 - React [create-react-app](https://github.com/facebookincubator/create-react-app)
 - React Router

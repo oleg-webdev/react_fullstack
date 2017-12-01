@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { HeaderLightLayer, HeaderBackLayer, LaptopDevice } from '../../img';
 import { FindUs } from './partials/FindUs';
 import { SimpliestWaySection } from './partials/SimpliestWaySection';
@@ -43,9 +44,11 @@ class Home extends Component {
                 <h2>Do you want to</h2>
                 <h2><strong>impress</strong> your clients?</h2>
                 <br/>
-                <a href="" className={'button-gradient'}>
+                <NavLink
+                  to={'/contact-us'}
+                  className={'button-gradient'}>
                   <span>You can hire us!</span>
-                </a>
+                </NavLink>
               </div>
             </div>
             <div className="col-md-6 device-column">

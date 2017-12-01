@@ -91,6 +91,8 @@ body {
   color: #fff;
   padding: 2px;
   display: inline-block;
+  cursor: pointer;
+  border: none;
   /* Rectangle 2: */
   border-radius: 100px;
   background: #102297;
@@ -106,7 +108,8 @@ body {
     padding: 10px 30px;
     display: inline-block; }
   .button-gradient:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #102397; }
     .button-gradient:hover span {
       background-color: #fff; }
 
