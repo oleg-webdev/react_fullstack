@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import layer1 from '../../img/header-white-layer.png';
-import layer2 from '../../img/header-layer-under.png';
-import device from '../../img/header-laptop-device.png';
+import { HeaderLightLayer, HeaderBackLayer, LaptopDevice } from '../../img';
+import { FindUs } from './partials/FindUs';
+import { SimpliestWaySection } from './partials/SimpliestWaySection';
 
 class Home extends Component {
 
@@ -11,7 +11,7 @@ class Home extends Component {
   }
 
   renderAuthContent() {
-    if(this.props.auth) {
+    if (this.props.auth) {
       return (
         <div className={'alert alert-success'}>
           <p>Is authenticated.</p>
@@ -34,8 +34,8 @@ class Home extends Component {
   render() {
     return (
       <div className="Home-scope">
-        <img src={layer1} className="white-layer" alt="layer-1"/>
-        <img src={layer2} className="cloudy-layer" alt="layer-2"/>
+        <img src={HeaderLightLayer} className="white-layer" alt="layer-1"/>
+        <img src={HeaderBackLayer} className="cloudy-layer" alt="layer-2"/>
         <div className="container home-banner">
           <div className="row">
             <div className="col-md-6 slogan-column">
@@ -44,14 +44,17 @@ class Home extends Component {
                 <h2><strong>impress</strong> your clients?</h2>
                 <br/>
                 <a href="" className={'button-gradient'}>
-                  <span>Get early access</span>
+                  <span>You can hire us!</span>
                 </a>
               </div>
             </div>
             <div className="col-md-6 device-column">
-              <img src={device} className="device-laptop" alt="device"/>
+              <img src={LaptopDevice} className="device-laptop" alt="device"/>
             </div>
           </div>
+
+          <FindUs>Reach more about us from external sources</FindUs>
+          <SimpliestWaySection />
         </div>
       </div>
     )

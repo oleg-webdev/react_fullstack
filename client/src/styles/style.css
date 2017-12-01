@@ -4,8 +4,72 @@
   font-weight: normal;
   font-style: normal; }
 
+body #root {
+  background-color: #F8FAFD; }
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: #6B8CAE;
+  font-weight: 300; }
+  body h1 strong, body h2 strong, body h3 strong, body h4 strong, body h5 strong, body h6 strong {
+    font-weight: 600; }
+
+body h2 {
+  font-size: 48px;
+  line-height: 68px; }
+
+body h3 {
+  font-size: 36px;
+  line-height: 44px; }
+
+body p, body li {
+  color: #6B8CAE;
+  font-weight: 300; }
+  body p strong, body li strong {
+    font-weight: 600; }
+
 body {
   overflow-x: hidden; }
+
+.content-scope {
+  position: relative;
+  z-index: 10; }
+
+.regular-page-scope {
+  position: relative;
+  padding-top: 125px;
+  padding-bottom: 125px; }
+
+.navbar-collapse {
+  /*Tablet*/ }
+  @media (max-width: 951px) {
+    .navbar-collapse > ul {
+      padding: 10px 20px;
+      background-color: #fff; } }
+
+.navbar-toggler {
+  outline: none; }
+  .navbar-toggler:focus {
+    outline: none; }
+
+.navbar-brand img {
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+  max-width: 80px; }
+
+#app-header:before, #app-header:after {
+  content: " ";
+  display: table; }
+
+#app-header:after {
+  clear: both; }
+
+#app-header > nav {
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s; }
 
 #app-header .navbar-nav .nav-link {
   color: #6B8CAE;
@@ -13,6 +77,14 @@ body {
   line-height: 23px; }
   #app-header .navbar-nav .nav-link.active {
     color: #343a40; }
+
+#app-header.scrolled-header > nav {
+  background-color: #fff; }
+  #app-header.scrolled-header > nav > .container {
+    align-items: center !important; }
+
+#app-header.scrolled-header .navbar-brand img {
+  max-width: 50px; }
 
 .button-gradient {
   text-align: center;
@@ -40,7 +112,11 @@ body {
 
 .Home-scope {
   position: relative;
-  padding-top: 65px; }
+  padding-top: 65px;
+  /*Mobile*/ }
+  @media (max-width: 767px) {
+    .Home-scope {
+      padding-top: 160px; } }
 
 .white-layer {
   position: absolute;
@@ -61,12 +137,72 @@ body {
 .home-banner {
   position: relative;
   z-index: 7; }
-  .home-banner h2 {
-    font-size: 48px;
-    line-height: 68px;
-    color: #6B8CAE; }
-    .home-banner h2 strong {
-      font-weight: 600; }
+
+.FindUs-scope {
+  /*Tablet*/ }
+  .FindUs-scope .logos-row {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #CBE3FA; }
+  @media (max-width: 951px) {
+    .FindUs-scope img {
+      margin-bottom: 20px; } }
+
+.SimpliestWaySection-scope {
+  padding-top: 150px;
+  padding-bottom: 150px; }
+  .SimpliestWaySection-scope .text-scope h3 {
+    margin-bottom: 30px; }
+  .SimpliestWaySection-scope .text-scope p {
+    display: block;
+    max-width: 300px;
+    line-height: 30px; }
+  .SimpliestWaySection-scope .boxes-wrapper {
+    /*Desktop*/ }
+    @media (min-width: 952px) {
+      .SimpliestWaySection-scope .boxes-wrapper {
+        padding-left: 120px;
+        transform: rotate(315deg); } }
+  .SimpliestWaySection-scope .four-boxes {
+    padding-left: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end; }
+    .SimpliestWaySection-scope .four-boxes:first-of-type {
+      align-items: flex-end; }
+    .SimpliestWaySection-scope .four-boxes .box {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      max-width: 45%;
+      flex-basis: 45%; }
+      .SimpliestWaySection-scope .four-boxes .box p {
+        margin-bottom: 5px;
+        text-align: center;
+        display: block;
+        color: #86B9F3; }
+      .SimpliestWaySection-scope .four-boxes .box > * {
+        max-width: 100%;
+        flex-basis: 100%; }
+      .SimpliestWaySection-scope .four-boxes .box .inner-content {
+        background: #F6F9FD;
+        box-shadow: 0 2px 44px 2px rgba(23, 128, 224, 0.27);
+        border-radius: 15px;
+        padding: 15px;
+        min-width: 128px;
+        height: 128px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .SimpliestWaySection-scope .four-boxes .box .inner-content img {
+          transform: rotate(-315deg); }
+      .SimpliestWaySection-scope .four-boxes .box.large {
+        max-width: 55%;
+        flex-basis: 55%; }
+        .SimpliestWaySection-scope .four-boxes .box.large .inner-content {
+          height: 200px; }
 
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)

@@ -1,6 +1,13 @@
+
 .Home-scope {
   position: relative;
   padding-top: 65px;
+
+  /*Mobile*/
+  @media (max-width: 767px) {
+    padding-top: 160px;
+  }
+
 }
 
 .white-layer {
@@ -9,6 +16,7 @@
   left: 0;
   z-index: 5;
 }
+
 .cloudy-layer {
   position: absolute;
   top: 0;
@@ -24,14 +32,111 @@
 .home-banner {
   position: relative;
   z-index: 7;
+}
 
-  h2 {
-    font-size: 48px;
-    line-height: 68px;
-    color: $cloudy;
+.FindUs-scope {
 
-    strong {
-      font-weight: 600;
+  .logos-row {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $lightblue;
+  }
+
+  /*Tablet*/
+  @media (max-width: 951px) {
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+@mixin box-prototype {
+  background: #F6F9FD;
+  box-shadow: 0 2px 44px 2px rgba(23, 128, 224, 0.27);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.SimpliestWaySection-scope {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  .text-scope {
+    h3 {
+      margin-bottom: 30px;
+    }
+
+    p {
+      display: block;
+      max-width: 300px;
+      line-height: 30px;
+    }
+  }
+
+  .boxes-wrapper {
+
+    /*Desktop*/
+    @media (min-width : 952px) {
+      padding-left: 120px;
+      transform: rotate(315deg);
+    }
+  }
+
+  .four-boxes {
+    padding-left: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    &:first-of-type {
+      align-items: flex-end;
+    }
+
+    .box {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      max-width: 45%;
+      flex-basis: 45%;
+
+      p {
+        margin-bottom: 5px;
+        text-align: center;
+        display: block;
+        color: $lightblue1;
+      }
+
+      > * {
+        max-width: 100%;
+        flex-basis: 100%;
+
+      }
+
+      .inner-content {
+        @include box-prototype;
+        min-width: 128px;
+        height: 128px;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+
+        img {
+          transform: rotate(-315deg);
+        }
+      }
+
+      &.large {
+        max-width: 55%;
+        flex-basis: 55%;
+
+        .inner-content {
+          height: 200px;
+        }
+      }
+
     }
   }
 }

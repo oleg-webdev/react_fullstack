@@ -5,7 +5,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="Dashboard-scope container">
+      <div className="Dashboard-scope container regular-page-scope">
         <h3>Dashboard</h3>
       </div>
     );

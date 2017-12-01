@@ -1,0 +1,53 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content : " "; // 1
+    display : table; // 2
+  }
+  &:after {
+    clear : both;
+  }
+}
+
+// Vertical Gradient
+@mixin gradient($color1 : $infoColor, $color2 : $mainColor) {
+  background-color  : $color2;
+  background        : -webkit-gradient(linear, left 0%, left 100%, from($color1), to($color2));
+  background        : -webkit-linear-gradient(top, $color1, 0%, $color2, 100%);
+  background        : -moz-linear-gradient(top, $color1 0%, $color2 100%);
+  background        : -ms-linear-gradient(top, $color1 0%, $color2 100%);
+  background        : linear-gradient(to bottom, $color1 0%, $color2 100%);
+  background-repeat : repeat-x;
+  filter            : progid:DXImageTransform.Microsoft.gradient(startColorstr='#ie-hex-str($color1)', startColorstr='#ie-hex-str($color2)', GradientType=0);
+}
+
+// Horizontal Gradient
+@mixin gradientH($color1: $infoColor, $color2: $mainColor) {
+  background : $color1; /* Old browsers */
+  background : -moz-linear-gradient(left, $color1 0%, $color2 100%);
+  background : -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+  background : linear-gradient(to right, $color1 0%, $color2 100%);
+  filter     : progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=1);
+}
+
+@mixin transition($time : 0.3s, $prop : all) {
+  -webkit-transition : $prop, $time;
+  -moz-transition    : $prop, $time;
+  -o-transition      : $prop, $time;
+  transition         : $prop, $time;
+}
+
+@mixin placeholder-color($color : $mainColor) {
+  ::-webkit-input-placeholder {
+    color : $color;
+  }
+  ::-moz-placeholder {
+    color : $color;
+  }
+  :-ms-input-placeholder {
+    color : $color;
+  }
+  :-moz-placeholder {
+    color : $color;
+  }
+}

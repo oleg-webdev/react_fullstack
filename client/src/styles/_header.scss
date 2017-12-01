@@ -1,5 +1,35 @@
+.navbar-collapse {
+  /*Tablet*/
+  @media (max-width: 951px) {
+    > ul {
+      padding: 10px 20px;
+      background-color: #fff;
+    }
+  }
+}
+
+.navbar-toggler {
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-brand {
+  img {
+    @include transition;
+    max-width: 80px;
+  }
+}
 
 #app-header {
+  @include clearfix;
+
+  > nav {
+    @include transition;
+  }
+
   .navbar-nav {
     .nav-link {
       color: $cloudy;
@@ -8,6 +38,22 @@
 
       &.active {
         color: $gray-800;
+      }
+    }
+  }
+
+  &.scrolled-header {
+    > nav {
+      background-color: #fff;
+
+      > .container {
+        align-items: center !important;
+      }
+    }
+
+    .navbar-brand {
+      img {
+        max-width: 50px;
       }
     }
   }

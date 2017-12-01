@@ -10,3 +10,37 @@ $PFDinTextPro-Medium: 'PFDinTextPro-Medium';
   font-style: normal;
 
 }
+
+body {
+  #root {
+    background-color: #F8FAFD;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $cloudy;
+    font-weight: 300;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 68px;
+  }
+
+  h3 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  p, li {
+    color: $cloudy;
+    font-weight: 300;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}

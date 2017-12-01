@@ -1,5 +1,6 @@
-@import "typography";
 @import "vars";
+@import "mix";
+@import "typography";
 @import "defaults";
 @import "header";
 
@@ -8,5 +9,6 @@
 
 // Pages
 @import "home";
+@import "dashboard";
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

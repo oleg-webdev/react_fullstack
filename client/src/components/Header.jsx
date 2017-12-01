@@ -2,8 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { BWSBrandMonochrome } from '../img';
 
 class Header extends Component {
+
+  state = {
+    scrolled: ''
+  };
+
+  componentDidMount() {
+
+    let scrollTop = this.getScrollValue();
+
+    scrollTop > 200 && this.setState({ scrolled: 'scrolled-header' })
+
+    window.addEventListener('scroll', () => {
+      scrollTop = this.getScrollValue();
+      scrollTop > 200 ?
+        this.setState({ scrolled: 'scrolled-header' }) :
+        this.setState({ scrolled: '' })
+    });
+  }
+
+  getScrollValue() {
+    return (window.pageYOffset !== undefined) ?
+      window.pageYOffset :
+      (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  }
 
   renderContent() {
     const auth = this.props.auth
@@ -31,12 +56,15 @@ class Header extends Component {
 
   render() {
     return (
-      <header id={'app-header'}>
+      <header id={'app-header'} className={this.state.scrolled}>
         <nav className="navbar navbar-expand-lg fixed-top">
-          <div className="container">
-            <Link className="navbar-brand" to={this.mainLink()}>Navbar</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-              <span className="navbar-toggler-icon"></span>
+          <div className="container align-items-lg-start">
+            <Link className="navbar-brand" to={this.mainLink()}>
+              <img src={BWSBrandMonochrome} alt="bws-brand"/>
+            </Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent">
+              <i className="material-icons">menu</i>
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,9 +77,15 @@ class Header extends Component {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    exact to={'/dashboard'}
+                    to={'/contact-us'}
                     className="nav-link"
-                    activeClassName={'active'}>Dashboard</NavLink>
+                    activeClassName={'active'}>Contact</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    to={'/dashboard'}
+                    className="nav-link"
+                    activeClassName={'active'}>Dashboards</NavLink>
                 </li>
                 {this.renderContent()}
               </ul>

@@ -1,3 +1,14 @@
 body {
   overflow-x: hidden;
 }
+
+.content-scope {
+  position: relative;
+  z-index: 10;
+}
+
+.regular-page-scope {
+  position: relative;
+  padding-top: 125px;
+  padding-bottom: 125px;
+}
