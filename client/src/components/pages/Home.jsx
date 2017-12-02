@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { HeaderLightLayer, HeaderBackLayer, LaptopDevice } from '../../img';
 import { FindUs } from './partials/FindUs';
 import { SimpliestWaySection } from './partials/SimpliestWaySection';
+
+import Footer from '../Footer';
 
 class Home extends Component {
 
@@ -55,6 +57,9 @@ class Home extends Component {
           <FindUs>Reach more about us from external sources</FindUs>
           <SimpliestWaySection/>
         </div>
+        <Footer>
+          <p>Custom Homepage footer text</p>
+        </Footer>
       </div>
     )
   }

@@ -1,5 +1,6 @@
-body {
+body, html {
   overflow-x: hidden;
+  height: 100%;
 }
 
 .content-scope {
@@ -11,4 +12,30 @@ body {
   position: relative;
   padding-top: 125px;
   padding-bottom: 125px;
+}
+
+.banner-image {
+  height: 400px;
+  overflow: hidden;
+}
+
+.app-route-transition {
+  > * {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.page-footer {
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d7e3f3;
+
+  p {
+    display: block;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }

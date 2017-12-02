@@ -1,43 +1,45 @@
 .Flashes-scope {
   position: fixed;
-  bottom: 20px;
+  top: 50px;
   z-index: 8;
   right: 0;
-
-  p {
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
 
   .alert {
     &:last-of-type {
       margin-bottom: 0;
     }
 
-    &.alert-success {
-      p {
-        color: $success;
-      }
-    }
+  }
+}
 
-    &.alert-info {
-      p {
-        color: $info;
-      }
+.alert {
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
     }
+  }
 
-    &.alert-warning {
-      p {
-        color: $warning;
-      }
+  &.alert-success {
+    p {
+      color: $success;
     }
+  }
 
-    &.alert-danger {
-      p {
-        color: $danger;
-      }
+  &.alert-info {
+    p {
+      color: $info;
     }
+  }
 
+  &.alert-warning {
+    p {
+      color: $warning;
+    }
+  }
+
+  &.alert-danger {
+    p {
+      color: $danger;
+    }
   }
 }

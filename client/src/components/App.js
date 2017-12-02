@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { AnimatedSwitch } from 'react-router-transition';
 import * as actions from '../actions';
 
 // Partials
 import Header from './Header';
-import Footer from './Footer';
-import {Flashes} from './Flashes';
+import { Flashes } from './Flashes';
 
 // Pages
 import Home from './pages/Home';
@@ -53,29 +53,42 @@ class App extends Component {
   }
 
   render() {
+
     return (
-      <div>
-        <BrowserRouter>
-          <div>
-            <Header/>
-            <Flashes ondestroyFlashes={this.cleanFlashes.bind(this)}
-                     messages={this.sessionInfo()} />
+      <BrowserRouter>
+        <div>
+          <Header/>
+          <Flashes ondestroyFlashes={this.cleanFlashes.bind(this)}
+                   messages={this.sessionInfo()}/>
+
+          <AnimatedSwitch
+            className="app-route-transition"
+            atEnter={{ translateY: -5, opacity: 0}}
+            atLeave={{ translateY: -5, opacity: 0}}
+            atActive={{ translateY: 0, opacity: 1}}
+            mapStyles={styles => ({
+              transform: `translateY(${styles.translateY}%)`,
+              opacity: styles.opacity,
+              // transitionDuration: '1s'
+            })}
+          >
             <Route exact path="/" component={Home}/>
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route path="/contact-us" component={ContactUs}/>
+
             {/* Learning */}
             <Route exact path="/surveys/" component={Survey}/>
             <Route path="/surveys/new" component={SurveyNew}/>
-            <Footer/>
-          </div>
-        </BrowserRouter>
-      </div>
+
+          </AnimatedSwitch>
+        </div>
+      </BrowserRouter>
     )
   }
 
 }
 
-function mapStateToProps({auth, session}) {
+function mapStateToProps({ auth, session }) {
   return { auth, session }
 }
 

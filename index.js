@@ -78,9 +78,9 @@ require('./routes/pagesRoutes')(app);
 // Auth
 require('./routes/authRoutes')(app);
 // Emails
-require('./routes/emailRoutes')(app);
+require('./routes/formRoutes')(app);
 // Debug
-require('./routes/debugRoutes')(app);
+require('./routes/debugAndSessionRoutes')(app);
 
 
 

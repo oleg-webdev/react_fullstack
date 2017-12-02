@@ -1,5 +1,9 @@
+const { check, validationResult } = require('express-validator/check');
+const { matchedData, sanitize } = require('express-validator/filter');
 const nodemailer = require('nodemailer');
+
 const keys = require('../config/keys');
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -13,8 +17,35 @@ module.exports = app => {
   /***
    * Contact Us Router
    */
-  app.post('/form/contact-us', (req, res) => {
-    console.log(req.body);
+  app.post('/form/contact-us', [
+
+    check('userMessage')
+      .trim()
+      .isLength({ min: 5 }).withMessage('Your message is too short'),
+
+    check('userEmail')
+      .isEmail().withMessage('must be an email')
+      .trim()
+      .normalizeEmail(),
+
+  ],(req, res) => {
+
+    const errors = validationResult(req);
+    const allErrors = req.validationErrors();
+    if (!errors.isEmpty()) {
+      req.session.flashMessage = [];
+
+      allErrors.map(function (error) {
+        req.session.flashMessage.push({
+          key: error.param,
+          type: 'danger',
+          body: error.msg
+        })
+      });
+
+      return res.redirect('/contact-us');
+    }
+
     const mailOptions = {
       from: req.body.userEmail,
       to: keys.appEmail,
@@ -37,7 +68,7 @@ module.exports = app => {
         }
       }
 
-      res.redirect('/');
+      res.redirect('/contact-us');
     });
   });
 

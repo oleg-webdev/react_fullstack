@@ -1,46 +1,50 @@
 import React from 'react';
-
+import Footer from '../Footer';
 export const ContactUs = () => {
 
   return (
-    <div className="ContactUs-scope container regular-page-scope">
-      <h3>Contact Us</h3>
+    <div className="ContactUs-scope">
+      <div className="banner-image">
+        <h1>Contact Us</h1>
+      </div>
+      <div className="container">
 
-      <br/>
-      <form method="post" action="/form/contact-us">
+        <form method="post" action="/form/contact-us">
 
-        <div className="form-group row">
-          <label htmlFor="user-email"
-                 className="col-sm-2 col-form-label col-form-label-lg">Email</label>
-          <div className="col-sm-10">
-            <input type="email"
-                   className="form-control form-control-lg"
-                   id="user-email"
-                   name="userEmail"
-                   placeholder="Enter your Email."/>
+          <div className="form-group row">
+            <label htmlFor="user-email"
+                   className="col-sm-2 col-form-label col-form-label-lg">Email</label>
+            <div className="col-sm-10">
+              <input type="email"
+                     className="form-control form-control-lg"
+                     id="user-email"
+                     name="userEmail"
+                     placeholder="Enter your Email."/>
+            </div>
           </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="user-message"
-                 className="col-sm-2 col-form-label col-form-label-lg">Message</label>
-          <div className="col-sm-10">
+          <div className="form-group row">
+            <label htmlFor="user-message"
+                   className="col-sm-2 col-form-label col-form-label-lg">Message</label>
+            <div className="col-sm-10">
             <textarea className="form-control form-control-lg"
                       id="user-message"
                       rows={5}
                       name="userMessage"
                       placeholder="Your Message."></textarea>
+            </div>
           </div>
-        </div>
 
-        <div className="form-group row text-right">
-          <div className="col-12">
-            <button type="submit" className={'button-gradient'}>
-              <span>Send Message!</span>
-            </button>
+          <div className="form-group row text-right">
+            <div className="col-12">
+              <button type="submit" className={'button-gradient'}>
+                <span>Send Message!</span>
+              </button>
+            </div>
           </div>
-        </div>
 
-      </form>
+        </form>
+      </div>
+      <Footer/>
     </div>
   );
 

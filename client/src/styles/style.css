@@ -27,8 +27,9 @@ body p, body li {
   body p strong, body li strong {
     font-weight: 600; }
 
-body {
-  overflow-x: hidden; }
+body, html {
+  overflow-x: hidden;
+  height: 100%; }
 
 .content-scope {
   position: relative;
@@ -39,23 +40,46 @@ body {
   padding-top: 125px;
   padding-bottom: 125px; }
 
+.banner-image {
+  height: 400px;
+  overflow: hidden; }
+
+.app-route-transition > * {
+  position: absolute;
+  width: 100%; }
+
+.page-footer {
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d7e3f3; }
+  .page-footer p {
+    display: block; }
+    .page-footer p:last-of-type {
+      margin-bottom: 0; }
+
 .Flashes-scope {
   position: fixed;
-  bottom: 20px;
+  top: 50px;
   z-index: 8;
   right: 0; }
-  .Flashes-scope p:last-of-type {
-    margin-bottom: 0; }
   .Flashes-scope .alert:last-of-type {
     margin-bottom: 0; }
-  .Flashes-scope .alert.alert-success p {
-    color: #28a745; }
-  .Flashes-scope .alert.alert-info p {
-    color: #17a2b8; }
-  .Flashes-scope .alert.alert-warning p {
-    color: #ffc107; }
-  .Flashes-scope .alert.alert-danger p {
-    color: #dc3545; }
+
+.alert p:last-of-type {
+  margin-bottom: 0; }
+
+.alert.alert-success p {
+  color: #28a745; }
+
+.alert.alert-info p {
+  color: #17a2b8; }
+
+.alert.alert-warning p {
+  color: #ffc107; }
+
+.alert.alert-danger p {
+  color: #dc3545; }
 
 .navbar-collapse {
   /*Tablet*/ }
@@ -224,6 +248,19 @@ body {
         flex-basis: 55%; }
         .SimpliestWaySection-scope .four-boxes .box.large .inner-content {
           height: 200px; }
+
+.ContactUs-scope .banner-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../img/contact-us-image.jpg") no-repeat;
+  background-position-y: -200px;
+  background-size: 100%; }
+
+.ContactUs-scope .container {
+  padding-top: 100px;
+  padding-bottom: 100px; }
 
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)

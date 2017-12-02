@@ -19,7 +19,20 @@ module.exports = app => {
 
 
 		res.send(req.session.cart)
-	})
+	});
+
+
+  /***
+   * Session
+   */
+  app.post('/api/fetch_session', (req, res) => {
+    res.send(req.session);
+  });
+
+  app.post('/api/destroy_flashes', (req, res) => {
+    req.session.flashMessage = false
+    res.send('done');
+  });
 
 
 }

@@ -17,6 +17,13 @@ import FacebookLogo from './logo-facebook.svg';
 import UpworkLogoMonochrome from './logo-upwork-monochrome.svg';
 import LinkedinLogoMonochrome from './Linkedin-logo-monochrome.svg';
 
+// Generic Images
+// import ContactUsBanner from './contact-us-image.jpg';
+import Mdash1 from './material-dashboard-1.jpg';
+import Mdash2 from './material-dashboard-2.jpg';
+import Mdash3 from './material-dashboard-3.jpg';
+import Mdash4 from './material-dashboard-4.jpg';
+
 export {
   HeaderLightLayer,
   HeaderBackLayer,
@@ -31,5 +38,10 @@ export {
   CurveIcon,
   Folders,
   FontIconExample,
-  Themable
+  Themable,
+
+  Mdash1,
+  Mdash2,
+  Mdash3,
+  Mdash4
 };
