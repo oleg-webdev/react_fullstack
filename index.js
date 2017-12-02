@@ -13,9 +13,9 @@ const keys = require('./config/keys');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI).then(() => {
-	console.log(`*** Database Connected ***`)
+  console.log(`*** Database Connected ***`)
 }, err => {
-	console.log('Unable connect to database: ', err);
+  console.log('Unable connect to database: ', err);
 });
 
 const app = express();
@@ -31,11 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // cookie-session
 app.use(
-	cookieSession({
-		name: 'authSession',
-		maxAge: 300 * 24 * 60 * 60 * 1000, // month
-		keys: [ keys.cookieKey ]
-	})
+  cookieSession({
+    name: 'authSession',
+    maxAge: 300 * 24 * 60 * 60 * 1000, // month
+    keys: [keys.cookieKey]
+  })
 );
 
 // express-session
@@ -47,21 +47,21 @@ app.use(
 // }))
 
 app.use(expressValidator({
-	errorFormatter: (param, msg, value) => {
-		let namespace = param.split('.'),
-			root = namespace.shift(),
-			formParam = root
+  errorFormatter: (param, msg, value) => {
+    let namespace = param.split('.'),
+      root = namespace.shift(),
+      formParam = root
 
-		while (namespace.length) {
-			formParam += `[${namespace.shift()}]`
-		}
+    while (namespace.length) {
+      formParam += `[${namespace.shift()}]`
+    }
 
-		return {
-			param: formParam,
-			msg: msg,
-			value: value
-		}
-	}
+    return {
+      param: formParam,
+      msg: msg,
+      value: value
+    }
+  }
 }));
 
 app.use(passport.initialize());
@@ -70,7 +70,7 @@ app.use(passport.session());
 // Simple middleware
 app.use((req, res, next) => {
 
-	next()
+  next()
 });
 
 // Pages
@@ -82,12 +82,20 @@ require('./routes/formRoutes')(app);
 // Debug
 require('./routes/debugAndSessionRoutes')(app);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 
+
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
-	// http://localhost:8080/
-	// https://quiet-basin-37027.herokuapp.com/
-	console.log(`Starting: http://localhost:${port}`);
+  // http://localhost:8080/
+  // https://quiet-basin-37027.herokuapp.com/
+  console.log(`Starting: http://localhost:${port}`);
 });

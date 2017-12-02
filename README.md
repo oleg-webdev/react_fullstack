@@ -16,3 +16,5 @@ Stack of technologies and libs included:
 - Mongoose
 - [mLab cloud mongo db](https://mlab.com/)
 - Bootstrap 4
+- Heroku prepared
+- Separate server and client
