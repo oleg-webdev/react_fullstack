@@ -10,7 +10,7 @@ const passport = require('passport');
 const keys = require('./config/keys');
 
 // git push heroku master
-// git push remote origin
+// git push origin master
 // Services
 require('./services/passport');
 
