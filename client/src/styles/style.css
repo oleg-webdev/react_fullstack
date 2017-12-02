@@ -39,6 +39,24 @@ body {
   padding-top: 125px;
   padding-bottom: 125px; }
 
+.Flashes-scope {
+  position: fixed;
+  bottom: 20px;
+  z-index: 8;
+  right: 0; }
+  .Flashes-scope p:last-of-type {
+    margin-bottom: 0; }
+  .Flashes-scope .alert:last-of-type {
+    margin-bottom: 0; }
+  .Flashes-scope .alert.alert-success p {
+    color: #28a745; }
+  .Flashes-scope .alert.alert-info p {
+    color: #17a2b8; }
+  .Flashes-scope .alert.alert-warning p {
+    color: #ffc107; }
+  .Flashes-scope .alert.alert-danger p {
+    color: #dc3545; }
+
 .navbar-collapse {
   /*Tablet*/ }
   @media (max-width: 951px) {

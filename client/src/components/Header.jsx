@@ -99,9 +99,9 @@ class Header extends Component {
 
 }
 
-// state.auth
-function mapStateToProps(state) {
-  return { auth: state.auth }
+// state.auth, state.session
+function mapStateToProps({auth}) {
+  return { auth }
 }
 
 export default withRouter(connect(mapStateToProps)(Header));

@@ -5,6 +5,15 @@ const { createUser } = require('../models/User')
 
 module.exports = app => {
   // Google auth routes
+  app.post('/api/fetch_session', (req, res) => {
+    res.send(req.session);
+  });
+
+  app.post('/api/destroy_flashes', (req, res) => {
+    req.session.flashMessage = false
+    res.send('done');
+  });
+
   app.get(
     '/auth/google',
     passport.authenticate('google',
@@ -12,7 +21,7 @@ module.exports = app => {
         scope: ['profile', 'email']
       }
     )
-  )
+  );
 
   app.get(
     '/auth/google/callback',

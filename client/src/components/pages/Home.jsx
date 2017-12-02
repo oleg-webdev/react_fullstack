@@ -28,10 +28,6 @@ class Home extends Component {
 
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className="Home-scope">
@@ -57,7 +53,7 @@ class Home extends Component {
           </div>
 
           <FindUs>Reach more about us from external sources</FindUs>
-          <SimpliestWaySection />
+          <SimpliestWaySection/>
         </div>
       </div>
     )
@@ -65,9 +61,9 @@ class Home extends Component {
 
 }
 
-// state.auth
-function mapStateToProps(state) {
-  return { auth: state.auth }
+// state.auth, state.session
+function mapStateToProps({ auth }) {
+  return { auth }
 }
 
 export default connect(mapStateToProps)(Home);
