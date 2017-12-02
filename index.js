@@ -9,6 +9,8 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const keys = require('./config/keys');
 
+// git push heroku master
+// git push remote origin
 // Services
 require('./services/passport');
 
