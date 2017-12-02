@@ -1,8 +1,10 @@
 const nodemailer = require('nodemailer');
+const keys = require('../config/keys');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-
+    user: keys.appEmail,
+    pass: keys.appEmailPass
   }
 });
 
@@ -15,7 +17,7 @@ module.exports = app => {
     console.log(req.body);
     const mailOptions = {
       from: req.body.userEmail,
-      to: 'alicelfdev@gmail.com',
+      to: keys.appEmail,
       subject: 'Sending Email using Node.js',
       text: req.body.userMessage
     };

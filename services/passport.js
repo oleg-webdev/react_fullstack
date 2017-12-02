@@ -1,12 +1,12 @@
-const passport = require('passport')
-const GoogleStrategy = require('passport-google-oauth20').Strategy
-const LocalStrategy = require('passport-local').Strategy
-const { User, getUserByEmail, comparePassword } = require('../models/User')
-const keys = require('../config/keys')
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
+const { User, getUserByEmail, comparePassword } = require('../models/User');
+const keys = require('../config/keys');
 
 passport.serializeUser((user, done) => {
 	done(null, user.id)
-})
+});
 
 passport.deserializeUser((id, done) => {
 	User.findById(id, (err, user) => {
