@@ -83,6 +83,9 @@ require('./routes/authRoutes')(app);
 require('./routes/formRoutes')(app);
 // Debug
 require('./routes/debugAndSessionRoutes')(app);
+// Payments
+require('./routes/paymentRoutes')(app);
+
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
