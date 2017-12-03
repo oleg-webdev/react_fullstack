@@ -1,5 +1,7 @@
 # NODE FULL STACK starter kit
 
+![alt text](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
+
 [My](https://www.upwork.com/fl/olegtsibulnik) starter template for node.js development
 Stack of technologies and libs included:
 - axios
