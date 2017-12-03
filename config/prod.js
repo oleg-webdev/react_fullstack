@@ -9,4 +9,7 @@ module.exports = {
 
   appEmail: process.env.APP_EMAIL_KEY,
   appEmailPass: process.env.APP_EMAIL_PASSWORD,
+
+  stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY,
 }
