@@ -23,4 +23,4 @@ Stack of technologies and libs included:
 - Heroku prepared
 - Separate server and client
 
-![laptop image](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
+![laptop image](http://billwebstudio.com/projects/_webdev/images/laptop-image.png)
