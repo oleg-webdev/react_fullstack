@@ -1,6 +1,6 @@
 # NODE FULL STACK starter kit
 ## Synopsis
-[My](https://www.upwork.com/fl/olegtsibulnik) starter template for node.js development.
+[Starter template](https://www.upwork.com/fl/olegtsibulnik)  for node.js development.
 
 Quick start for generic web apps with front end create-react-app and node.js as backend.
 
