@@ -4,8 +4,6 @@
 
 Quick start for generic web apps with front end create-react-app and node.js as backend.
 
-![laptop image](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
-
 ### Libs
 Stack of technologies and libs included:
 - axios
@@ -24,3 +22,5 @@ Stack of technologies and libs included:
 - Bootstrap 4
 - Heroku prepared
 - Separate server and client
+
+![laptop image](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
