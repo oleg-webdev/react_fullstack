@@ -1,8 +1,12 @@
 # NODE FULL STACK starter kit
 
-![alt text](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
+![laptop image](https://quiet-basin-37027.herokuapp.com/static/media/header-laptop-device.65c04e81.png)
+### Synopsis
+[My](https://www.upwork.com/fl/olegtsibulnik) starter template for node.js development.
 
-[My](https://www.upwork.com/fl/olegtsibulnik) starter template for node.js development
+Quick start for generic web apps with front end create-react-app and node.js as backend.
+
+### Libs
 Stack of technologies and libs included:
 - axios
 - node.js
