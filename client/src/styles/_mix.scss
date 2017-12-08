@@ -51,3 +51,21 @@
     color : $color;
   }
 }
+
+%space-x-section {
+  float   : none;
+  clear   : both;
+  display : block;
+  width   : 100%;
+  @include clearfix();
+}
+
+@mixin space-x {
+  @for $i from 1 through 10 {
+    .space-x-#{$i}0 {
+      @extend %space-x-section;
+      height : ($i*10)+px;
+    }
+  }
+}
+@include space-x();		// 10 {+10} 100

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="594px" height="1016px" viewBox="0 0 594 1016" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="148.081349" y="148.081349" width="715" height="715" rx="100"></rect>
+        <filter x="-10.5%" y="-8.4%" width="121.0%" height="121.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="22.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.501960784   0 0 0 0 0.878431373  0 0 0 0.212890625 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="White-Landing-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -1286.000000)">
+        <g id="BG" transform="translate(-2138.000000, -2487.000000)">
+            <g id="Group-5" transform="translate(1729.000000, 3765.000000)">
+                <g id="BG" transform="translate(505.581349, 505.581349) rotate(-315.000000) translate(-505.581349, -505.581349) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F6F9FD" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

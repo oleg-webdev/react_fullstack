@@ -10,7 +10,7 @@ import {
 export const FindUs = ({children}) => {
 
   return (
-    <div className="FindUs-scope">
+    <div className="FindUs-scope container">
       <div className="row logos-row align-content-center justify-content-center">
         <a href={"https://www.linkedin.com/in/oleg-webdev-76726996/"}
            target="_blank"

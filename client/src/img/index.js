@@ -24,6 +24,9 @@ import Mdash2 from './material-dashboard-2.jpg';
 import Mdash3 from './material-dashboard-3.jpg';
 import Mdash4 from './material-dashboard-4.jpg';
 
+import PhoneDevice from './phone-device.png';
+import PhoneDevice2 from './phone-device-2.png';
+
 export {
   HeaderLightLayer,
   HeaderBackLayer,
@@ -43,5 +46,8 @@ export {
   Mdash1,
   Mdash2,
   Mdash3,
-  Mdash4
+  Mdash4,
+
+  PhoneDevice,
+  PhoneDevice2,
 };
