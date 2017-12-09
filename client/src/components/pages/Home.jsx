@@ -5,8 +5,9 @@ import { HeaderLightLayer, HeaderBackLayer, LaptopDevice } from '../../img';
 import { FindUs } from './partials/FindUs';
 import { SimpliestWaySection } from './partials/SimpliestWaySection';
 import { HomepageSectionLiveMockups } from './partials/HomepageSectionLiveMockups';
-
 import Footer from '../Footer';
+
+
 
 class Home extends Component {
 
@@ -31,6 +32,28 @@ class Home extends Component {
 
   }
 
+  componentDidMount() {
+    const animElem = this.laptop;
+    console.log(animElem);
+
+    // const controller = new ScrollMagic.Controller();
+    // const totalScenes = [];
+    //
+    // totalScenes.push(new ScrollMagic.Scene({
+    //     triggerElement: animElem.parentElement,
+    //     duration      : 100,
+    //   })
+    //     .setTween(TweenMax.from(animElem, 0.1, {
+    //       x      : -100,
+    //       opacity: 0
+    //     }))
+    // );
+    //
+    // if (totalScenes.length > 0) {
+    //   controller.addScene(totalScenes)
+    // }
+  }
+
   render() {
     return (
       <div className="Home-scope">
@@ -53,7 +76,9 @@ class Home extends Component {
                 </div>
               </div>
               <div className="col-md-6 device-column">
-                <img src={LaptopDevice} className="device-laptop" alt="device"/>
+                <img
+                  ref={laptop => { this.laptop = laptop; }}
+                  src={LaptopDevice} className="device-laptop" alt="device"/>
               </div>
             </div>
           </div>

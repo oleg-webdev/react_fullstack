@@ -17,6 +17,9 @@ require('jquery');
 window.Popper = require('popper.js');
 require('bootstrap');
 
+// require('scrollmagic');
+// require('gsap');
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 ReactDOM.render(
