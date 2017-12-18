@@ -1,6 +1,7 @@
 # NODE FULL STACK starter kit
 ## Synopsis
 [Starter template](https://www.upwork.com/fl/olegtsibulnik)  for node.js development.
+[Demo](https://quiet-basin-37027.herokuapp.com/) result.
 
 Quick start for generic web apps with front end create-react-app and node.js as backend.
 

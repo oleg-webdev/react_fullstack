@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// ref={someref => this.someref = someref}
+// ReactDOM.findDOMNode(this.someref)
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
